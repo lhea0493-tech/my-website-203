@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Navigation bar */
+nav {
+  background: #131a1b;
+  padding: 10px 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+}
+
+nav ul li {
+  position: relative;
+}
+
+/* Links */
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  padding: 8px 12px;
+  transition: background 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+  background: #358497;
+  border-radius: 5px;
+}
+
+/* Logo styling */
+.logo {
+  margin-right: auto;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.logo img {
+  height: 40px;   /* Adjust logo size */
+  width: auto;
+  display: block;
+}
+
+/* Responsive for small screens */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+/* Banner section */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 560px; /* adjust height as needed */
+  overflow: hidden;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* makes the image cover the whole banner area */
+  display: block;
+}
+
+.banner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+.banner-text h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.banner-text p {
+  font-size: 18px;
+}
+/* Floating footer inside banner */
+.banner-footer {
+  position: absolute;
+  bottom: 15px;    /* distance from bottom */
+  left: 20px;      /* distance from left */
+  background: rgba(0, 0, 0, 0.6); /* transparent background */
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-size: 14px;
+
+  display: flex;
+  flex-direction: column;   /* stack icons and text */
+  align-items: center;
+  text-align: center;
+}
+
+/* Social icons row */
+.social-icons {
+  display: flex;      /* make icons horizontal */
+  gap: 10px;          /* spacing between icons */
+  margin-bottom: 8px; /* space between icons and text */
+}
+
+.social-icons img {
+  height: 30px;   /* adjust size of icons */
+  width: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1); /* hover effect */
+}
+/* Button Overlay */
+.hero-btn {
+  position: absolute;
+  bottom: 60px;
+  left: 58%;                   /* Center horizontally */
+  transform: translateX(-50%); /* Adjust position to center */
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(90deg, #444, #000);
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+  transition: 0.3s ease;  /* Smooth movement */
+}
+
+/* When sidebar expands, keep it centered */
+.sidebar:hover ~ .main-content .hero-btn {
+  bottom: 120px;  /* Moves up smoothly */
+  left: 50%;      /* Stay centered */
+  transform: translateX(-50%);
+}
